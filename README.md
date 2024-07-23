@@ -2,6 +2,8 @@
 
 Healthtech Project es una aplicación diseñada para conectar a las personas con doctores locales, facilitando el acceso a servicios médicos de manera rápida y eficiente.
 
+![Logo](https://i.ibb.co/r60SWMt/Group-19-2.png)
+
 ### Descripción del Proyecto
 
 El proyecto tiene como objetivo proporcionar una plataforma donde los usuarios puedan buscar y comunicarse con doctores locales para recibir atención médica. Utiliza Next.js para el frontend y Spring para el backend, asegurando una experiencia de usuario fluida y una robusta gestión de datos en el servidor.
