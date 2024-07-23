@@ -26,7 +26,7 @@ El proyecto tiene como objetivo proporcionar una plataforma donde los usuarios p
 1. **Clonar el Repositorio**
 
     ```bash
-    git clone https://github.com/tu-usuario/healthtech-project.git
+    git clone https://github.com/No-Country-simulation/c19-43-n-java-next-back-end.git
     cd healthtech-project
     ```
 
