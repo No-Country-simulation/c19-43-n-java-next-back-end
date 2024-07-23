@@ -57,14 +57,6 @@ Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
 
 ### Creadores del proyecto
 
-#### UI/Frontend
-
-- [@arimakey](https://github.com/arimakey)
-
-#### UX/Frontend
-
-- [@PANCnnss](https://github.com/PANCnnss)
-
 #### Backend
 
 - [@angeljs95](https://github.com/angeljs95)
@@ -72,3 +64,11 @@ Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
 #### Tester
 
 - [@Bludegan](https://github.com/Bludegan)
+
+#### UX/Frontend
+
+- [@PANCnnss](https://github.com/PANCnnss)
+
+#### UI/Frontend
+
+- [@arimakey](https://github.com/arimakey)
