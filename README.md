@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Healthtech Project
 
-## Getting Started
+Healthtech Project es una aplicación diseñada para conectar a las personas con doctores locales, facilitando el acceso a servicios médicos de manera rápida y eficiente.
 
-First, run the development server:
+### Descripción del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El proyecto tiene como objetivo proporcionar una plataforma donde los usuarios puedan buscar y comunicarse con doctores locales para recibir atención médica. Utiliza Next.js para el frontend y Spring para el backend, asegurando una experiencia de usuario fluida y una robusta gestión de datos en el servidor.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Tecnologías Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js
+- **Backend**: Spring Framework
+- **UI/UX**: Figma
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Instalación y Configuración
 
-## Learn More
+#### Requisitos Previos
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js
+- Java 11 o superior
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Pasos para la Instalación
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Clonar el Repositorio**
 
-## Deploy on Vercel
+    ```bash
+    git clone https://github.com/tu-usuario/healthtech-project.git
+    cd healthtech-project
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Configurar el Frontend**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```bash
+    git checkout frontend
+    cd frontend
+    npm install
+    npm run dev
+    ```
+
+3. **Configurar el Backend**
+
+    ```bash
+    git checkout backend
+    cd backend
+    ./mvnw spring-boot:run
+    ```
+
+### Contribuir
+
+Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una rama con tu nueva característica (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva característica'`).
+4. Empuja la rama (`git push origin feature/nueva-caracteristica`).
+5. Crea un Pull Request.
+
+### Creadores del proyecto
+
+#### UI/Frontend
+
+- [@arimakey](https://github.com/arimakey)
+
+#### UX/Frontend
+
+- [@PANCnnss](https://github.com/PANCnnss)
+
+#### Backend
+
+- [@angeljs95](https://github.com/angeljs95)
+
+#### Tester
+
+- [@Bludegan](https://github.com/Bludegan)
