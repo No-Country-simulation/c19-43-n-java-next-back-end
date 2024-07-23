@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 
-export function CardWithForm() {
+export default function CardWithForm() {
   return (
     <Card className="w-[350px]">
       <CardHeader>
