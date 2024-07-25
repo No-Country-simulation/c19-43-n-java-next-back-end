@@ -67,7 +67,7 @@ Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
 
 - [@Bludegan](https://github.com/Bludegan)
 
-#### UX/Frontend
+#### UI/UX/Frontend
 
 - [@PANCnnss](https://github.com/PANCnnss)
 
