@@ -1,0 +1,30 @@
+<Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Edit Profile</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Iniciar Sesión</DialogTitle>
+          <DialogDescription>
+            Ingresa tus datos y continuemos con esta aventura juntos! 
+          </DialogDescription>
+        </DialogHeader>
+        <div className="gap-4 grid py-4">
+          <div className="items-center gap-4 grid grid-cols-4">
+            <Label htmlFor="name" className="text-right">
+              Correo
+            </Label>
+            <Input id="email" type="email" value={sesion.email} className="col-span-3" />
+          </div>
+          <div className="items-center gap-4 grid grid-cols-4">
+            <Label htmlFor="username" className="text-right">
+              Contraseña
+            </Label>
+            <Input id="password" type="password" value={sesion.password} className="col-span-3" />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit">Ingresar</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>

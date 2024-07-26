@@ -31,21 +31,23 @@ import { z } from "zod";
 const formSchema = z.object({
   username: z.string().email(),
   password: z.string().min(8),
+  nombre: z.string().min(3),
 });
 
-export default function Login() {
+export default function Register() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
       password: "",
+      nombre: "",
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       console.log(values);
-      const response = await fetch("https://telemed-nocountry.rj.r.appspot.com/auth/login", {
+      const response = await fetch("https://telemed-nocountry.rj.r.appspot.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +66,7 @@ export default function Login() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Iniciar Sesión</Button>
+        <Button variant="outline">Registrate</Button>
       </DialogTrigger>
       <DialogContent>
         <Form {...form}>
@@ -75,6 +77,20 @@ export default function Login() {
                 Inicia sesión ahora y comienza una gran aventura
               </DialogDescription>
             </DialogHeader>
+            
+            <FormField
+              control={form.control}
+              name="nombre"
+              render={({ field }) => (
+                <FormItem className="flex flex-col space-y-1.5">
+                  <FormLabel>Nombre</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Jhon Doe" {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+
             <FormField
               control={form.control}
               name="username"
