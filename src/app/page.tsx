@@ -4,10 +4,8 @@ import Register from "@/components/Register";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-between items-center p-24 min-h-screen">
-      <Navbar />
-      <Login/>
-      <Register/>
+    <main className="flex flex-col justify-between items-center min-h-screen">
+      <Navbar />  
     </main>
   );
 }

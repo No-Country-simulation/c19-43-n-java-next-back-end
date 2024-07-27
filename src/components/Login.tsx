@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { login } from "@/api/auth"
 
 import {
   Dialog,
@@ -15,11 +16,9 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 
 import { Input } from "@/components/ui/input";
@@ -27,13 +26,17 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { setCookie } from "@/utils/cookies";
 
-const formSchema = z.object({
-  username: z.string().email(),
-  password: z.string().min(8),
-});
 
 export default function Login() {
+
+
+  const formSchema = z.object({
+    username: z.string().email(),
+    password: z.string().min(8),
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -43,21 +46,9 @@ export default function Login() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      console.log(values);
-      const response = await fetch("https://telemed-nocountry.rj.r.appspot.com/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-        mode: "no-cors",
-      });
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
+    const sesion = await login(values)
+    if(sesion) {
+      window.location.reload();
     }
   }
 
