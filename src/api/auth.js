@@ -16,11 +16,13 @@ export async function login(values) {
 
 export async function register(values) {
     try {
+        console.log(values);
         const response = await postRequest("auth/register", values);
         if (response) {
             setCookie("token", response.token, 7);
             return true;
         }
+        console.log(response);
     } catch (error) {
         console.error("Error during registration:", error);
     }

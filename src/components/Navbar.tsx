@@ -20,8 +20,10 @@ export default function Navbar() {
   return (
     <nav className="w-full">
       <div className="flex flex-row justify-between mx-auto my-0 py-4 w-full container">
-        <h1 className="my-auto cursor-pointer">
+        <h1 className="my-auto">
+          <a href="/">
           <img src="/icon.svg" alt="" />
+          </a>
         </h1>
         <NavigationMenu className="my-auto">
           <NavigationMenuList className="flex flex-row items-center gap-4 h-full">
