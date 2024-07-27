@@ -62,12 +62,7 @@ export default function Register() {
   return (
     <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-            <DialogHeader>
-              <DialogTitle>Registrarme</DialogTitle>
-              <DialogDescription>
-                Unete ahora y sé parte de la revolución
-              </DialogDescription>
-            </DialogHeader>
+
 
             <FormField
               control={form.control}
