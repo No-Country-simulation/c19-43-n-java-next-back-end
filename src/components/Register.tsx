@@ -1,47 +1,38 @@
 "use client";
 
+import form_countries from "@/data/countries.json";
+
 import { Button } from "@/components/ui/button";
 import { register } from "@/api/auth";
-import form_countries from "@/data/countries.json";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
-import { Checkbox } from "@radix-ui/react-checkbox";
 
-const formSchema = z.object({
-  username: z.string().email(),
-  password: z.string().min(8),
-  nombre: z.string().min(3),
-  apellido: z.string().min(3),
-  telefono: z.string().min(8),
-  documento: z.string().min(8),
-  pais: z.string().min(3),
-  provincia: z.string().min(3),
-  localidad: z.string().min(3),
-  role: z.string().min(3),
-});
+import { FormCountries } from "@/types/countries";
+
+const countries_data : FormCountries = form_countries;
 
 export default function Register() {
+  const formSchema = z.object({
+    username: z.string().email(),
+    password: z.string().min(8),
+    nombre: z.string().min(3),
+    apellido: z.string().min(3),
+    telefono: z.string().min(8),
+    documento: z.string().min(8),
+    pais: z.string().min(3),
+    provincia: z.string().min(3),
+    localidad: z.string().min(3),
+    role: z.string().min(3),
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -167,7 +158,7 @@ export default function Register() {
                         <SelectValue placeholder="Selecciona tu país de residencia" />
                       </SelectTrigger>
                       <SelectContent>
-                        {Object.keys(form_countries).map((country) => (
+                        {Object.keys(countries_data).map((country: string) => (
                           <SelectItem key={country} value={country}>
                             {country}
                           </SelectItem>
@@ -200,7 +191,7 @@ export default function Register() {
                       </SelectTrigger>
                       <SelectContent>
                         {country &&
-                          Object.keys(form_countries[country] || {}).map((province) => (
+                          Object.keys(countries_data[country] || {}).map((province: string) => (
                             <SelectItem key={province} value={province}>
                               {province}
                             </SelectItem>
@@ -229,7 +220,7 @@ export default function Register() {
                         <SelectValue placeholder="Selecciona tu localidad" />
                       </SelectTrigger>
                       <SelectContent>
-                        {province && (form_countries[country][province]?.map((town) => (
+                        {province && (countries_data[country][province]?.map((town: string) => (
                           <SelectItem key={town} value={town}>
                             {town}
                           </SelectItem>
