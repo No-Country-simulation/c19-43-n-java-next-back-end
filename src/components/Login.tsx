@@ -60,7 +60,7 @@ export default function Login() {
       <DialogContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-            <DialogHeader>
+            <DialogHeader className="text-center">
               <DialogTitle>Iniciar Sesión</DialogTitle>
               <DialogDescription>
                 Inicia sesión ahora y comienza una gran aventura
@@ -91,6 +91,9 @@ export default function Login() {
                 </FormItem>
               )}
             />
+            <DialogDescription className="text-center">
+              ¿Olvidó su contraseña? <a href="http://google.com">Recuperar Contraseña</a>
+            </DialogDescription>
 
             <DialogFooter>
               <Button type="submit">Ingresar</Button>
