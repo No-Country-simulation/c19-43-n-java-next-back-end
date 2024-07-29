@@ -1,9 +1,7 @@
 import Link from "next/link";
 import logo from '/public/logo-white-text.png';
 import Image from "next/image";
-import { Button } from "../ui/button";
-import Login from "../Login";
-import Register from "../Register";
+import NavLogin from "./NavLogin";
 
 export default function Header() {
   return (
@@ -18,8 +16,7 @@ export default function Header() {
           <Link className="" href="#contacto">Contacto</Link>
         </div>
         <div className="space-x-2 text-xl">
-          <Login />
-          <Register />
+          <NavLogin />
         </div>
       </nav>
     </div>
