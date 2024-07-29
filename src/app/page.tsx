@@ -21,7 +21,6 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       <Header />
-      <Navbar />
       {/* <DoctorCard /> */}
       {/* Seccion 1 */}
       <section className="relative w-full h-auto" id="inicio">
