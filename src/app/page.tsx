@@ -1,4 +1,7 @@
 import Hero from "@/components/landing/hero";
+import Login from "@/components/Login"
+import Register from "@/components/Register";
+import { DoctorCard } from "@/components/DoctorCard";
 
 import imgclinica from "/public/imgclinica.png";
 import imgdoctor from "/public/imgdoctor.png";
@@ -12,11 +15,14 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Header from "@/components/landing/header";
 import Link from "next/link";
+import Navbar from "@/components/landing/Navbar";
 //Landing Page
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       <Header />
+      <Navbar />
+      {/* <DoctorCard /> */}
       {/* Seccion 1 */}
       <section className="relative w-full h-auto" id="inicio">
         <div className="absolute inset-0 opacity-40">

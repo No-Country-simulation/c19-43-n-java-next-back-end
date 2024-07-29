@@ -1,0 +1,38 @@
+{
+    "Peru": {
+        "Lima": ["Miraflores", "San Isidro", "Barranco", "San Borja", "Surco"],
+        "Cusco": ["San Blas", "Santiago", "Wanchaq", "San Jerónimo", "Saylla"],
+        "Arequipa": ["Cercado", "Yanahuara", "Cayma", "Miraflores", "Paucarpata"],
+        "Trujillo": ["Trujillo", "El Porvenir", "Florencia de Mora", "La Esperanza", "Víctor Larco Herrera"],
+        "Chiclayo": ["Chiclayo", "José Leonardo Ortiz", "La Victoria", "Pimentel", "Reque"]
+    },
+    "Argentina": {
+        "Buenos Aires": ["Palermo", "Recoleta", "Belgrano", "Villa Urquiza", "Caballito"],
+        "Córdoba": ["Nueva Córdoba", "General Paz", "Alberdi", "Alta Córdoba", "Villa Allende"],
+        "Rosario": ["Centro", "Pichincha", "Echesortu", "Fisherton", "Arroyito"],
+        "Mendoza": ["Centro", "Godoy Cruz", "Las Heras", "Guaymallén", "Luján de Cuyo"],
+        "La Plata": ["Casco Urbano", "Tolosa", "Ringuelet", "City Bell", "Villa Elisa"]
+    },
+    "Venezuela": {
+        "Caracas": ["Libertador", "Chacao", "Baruta", "Sucre", "El Hatillo"],
+        "Maracaibo": ["Santa Lucía", "El Milagro", "La Lago", "Grano de Oro", "La Trinidad"],
+        "Valencia": ["San José", "Santa Rosa", "Candelaria", "Los Guayos", "Naguanagua"],
+        "Maracay": ["Girardot", "Mario Briceño Iragorry", "Francisco Linares Alcántara", "Santiago Mariño", "Libertador"],
+        "Barquisimeto": ["Iribarren", "Catedral", "Santa Rosa", "Concepción", "Tamaca"]
+    },
+    "Colombia": {
+        "Bogotá": ["Chapinero", "Usaquén", "Suba", "Teusaquillo", "Kennedy"],
+        "Medellín": ["El Poblado", "Laureles", "Belén", "Envigado", "Sabaneta"],
+        "Cali": ["San Antonio", "Granada", "El Peñón", "Ciudad Jardín", "Cristo Rey"],
+        "Cartagena": ["Centro", "Bocagrande", "El Laguito", "Getsemaní", "Manga"],
+        "Barranquilla": ["Centro", "El Prado", "Rebolo", "La Castellana", "Riomar"]
+    },
+    "Chile": {
+        "Santiago": ["Las Condes", "Providencia", "Ñuñoa", "Vitacura", "La Reina"],
+        "Valparaíso": ["Cerro Alegre", "Cerro Concepción", "Playa Ancha", "Barón", "Miraflores"],
+        "Concepción": ["Talcahuano", "Chiguayante", "San Pedro de la Paz", "Hualpén", "Penco"],
+        "La Serena": ["Elqui", "Coquimbo", "La Antena", "Almagro", "La Pampa"],
+        "Antofagasta": ["Centro", "Norte", "Sur", "La Chimba", "Coviefi"]
+    }
+}
+  
