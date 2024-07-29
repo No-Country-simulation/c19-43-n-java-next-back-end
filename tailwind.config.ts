@@ -25,11 +25,11 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#0057AB",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#ECF0F1",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -51,6 +51,18 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        links: {
+          DEFAULT: "#0369A1",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        danger: {
+          DEFAULT: "#A33031",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        warning: {
+          DEFAULT: "#FFDF38",
+          foreground: "hsl(var(--secondary-foreground))",
         },
       },
       borderRadius: {
