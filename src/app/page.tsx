@@ -1,21 +1,13 @@
-import Hero from "@/components/landing/hero";
-import Login from "@/components/Login"
-import Register from "@/components/Register";
-import { DoctorCard } from "@/components/DoctorCard";
-
 import imgclinica from "/public/imgclinica.png";
 import imgdoctor from "/public/imgdoctor.png";
 import imgdoctor2 from "/public/imgdoctor2.png";
 import imgubi from "/public/imgubi.png";
 import logo from '/public/logo-white-text.png';
-import svgx from '/public/x.svg';
-import svggmail from '/public/gmail.svg';
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Header from "@/components/landing/header";
 import Link from "next/link";
-import Navbar from "@/components/landing/Navbar";
 //Landing Page
 export default function Home() {
   return (
@@ -128,18 +120,14 @@ export default function Home() {
           <div>
             <div className="flex flex-row space-x-3 items-center justify-center">
               <Link href="" className="text-secondary">
-                <Image 
-                  src={svgx}
-                  alt="x"
-                  className="size-7"
-                />
+                <svg className="size-7" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.312 0.835083H18.1959L11.8952 8.03695L19.3079 17.8351H13.5041L8.95886 11.8918L3.7569 17.8351H0.871456L7.61096 10.1317L0.5 0.835867H6.45114L10.5599 6.26822L15.312 0.835083ZM14.3003 16.1095H15.8982L5.58284 2.47059H3.86818L14.3003 16.1095Z" fill="white"/>
+                </svg>
               </Link>
               <Link href="" className="text-secondary">
-                <Image 
-                  src={svggmail}
-                  alt="Gmail"
-                  className="size-7"
-                />
+                <svg className="size-7" width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.0799 3.15726V16.2895C23.0799 17.143 22.3887 17.8341 21.5352 17.8341H17.9295V9.07994L11.75 13.7157L5.57053 9.07994V17.8351H1.9648C1.76188 17.8351 1.56094 17.7951 1.37348 17.7174C1.18601 17.6397 1.01569 17.5259 0.872246 17.3823C0.728801 17.2388 0.615043 17.0684 0.537474 16.8809C0.459904 16.6934 0.420042 16.4924 0.420166 16.2895V3.15726C0.420166 1.24724 2.60022 0.156737 4.12786 1.30294L5.57053 2.38589L11.75 7.0198L17.9295 2.384L19.3722 1.30294C20.8989 0.157681 23.0799 1.24724 23.0799 3.15726Z" fill="white"/>
+                </svg>
               </Link>
             </div>
             <div className="text-secondary text-xs">
