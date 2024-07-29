@@ -33,9 +33,7 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}>
-        <main className="flex flex-col items-center min-h-screen">
-          {children}
-        </main> 
+        {children}
       </body>
     </html>
   );
