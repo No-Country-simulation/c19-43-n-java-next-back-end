@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="flex flex-row justify-between mx-auto my-0 py-4 w-full container">
         <h1 className="my-auto">
           <a href="/">
-          <Image src="/icon.svg" alt="" />
+          <img src="/icon.svg" alt="" />
           </a>
         </h1>
         <NavigationMenu className="my-auto">

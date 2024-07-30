@@ -62,7 +62,7 @@ export default function Register() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="bg-secondary text-primary rounded-2xl">Registrarse</Button>
+        <Button variant="outline" className="border-primary text-primary">Registrarse</Button>
       </DialogTrigger>
       <DialogContent>
         <Form {...form}>
