@@ -6,10 +6,11 @@ export async function login(values) {
         const response = await postRequest("auth/login", values);
         if (response) {
             setCookie("token", response.token, 7);
+            setCookie("session", response, 7);
             return true;
         }
     } catch (error) {
-        console.error("Error during login:", error);
+        console.error("Error al hacer login:", error);
     }
     return false;
 }

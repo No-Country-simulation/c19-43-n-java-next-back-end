@@ -1,3 +1,5 @@
+import * as ricon from '@remixicon/react';
+
 const navbar_list = [
   {
     title: "Inicio",
@@ -19,4 +21,10 @@ const navbar_list = [
   }
 ];
 
-export { navbar_list };
+const sidebar_list = [
+  {title:'Buscar Doctor',href:'user/buscar',icon:ricon.RiSearchLine, subs:[],},
+  {title:'Mis consultas',href:'user/consultas',icon:ricon.RiCalendar2Line, subs:[],},
+  {title:'Historia Médica',href:'user/historia',icon:ricon.RiClipboardLine, subs:[],},
+];
+
+export { navbar_list, sidebar_list };
