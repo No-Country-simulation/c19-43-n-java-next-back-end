@@ -55,7 +55,7 @@ export default function Login() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="border rounded-2xl border-b-secondary bg-primary text-secondary">Ingresar</Button>
+        <Button >Ingresar</Button>
       </DialogTrigger>
       <DialogContent>
         <Form {...form}>

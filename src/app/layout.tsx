@@ -5,6 +5,9 @@ import "@/app/globals.css"
 import { Inter as FontSans } from "next/font/google"
  
 import { cn } from "@/lib/utils"
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 //import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,7 +36,11 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}>
-        {children}
+        <Navbar />  
+        <main className="flex flex-col items-center min-h-screen container md:mx-auto p-2">
+          {children}
+        </main> 
+        <Footer />
       </body>
     </html>
   );
