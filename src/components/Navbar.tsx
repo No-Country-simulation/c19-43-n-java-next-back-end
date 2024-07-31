@@ -6,8 +6,8 @@ import { navbar_list } from "@/config/config";
 import Link from "next/link";
 import User from '@/components/User';
 import { useEffect, useState } from "react";
-import Login from "../Login";
-import Register from "../Register";
+import Login from "./Login";
+import Register from "./Register";
 import Image from "next/image";
 
 export default function Navbar() {
