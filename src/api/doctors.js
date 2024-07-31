@@ -1,6 +1,6 @@
 import { getRequest, postRequest } from "./request";
 
-export async function login(values) {
+export async function getAllDoctors(values) {
     try {
         const response = await getRequest("api/user/listarMedicos");
         if (response) {

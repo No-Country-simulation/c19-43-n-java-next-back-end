@@ -21,13 +21,13 @@ export default function Navbar() {
 
   return (
     <nav className="w-full">
-      <div className="flex flex-row justify-between mx-auto my-0 py-4 w-full container">
+      <div className="flex flex-row justify-between mx-auto my-0 py-4 px-2 md:px-4 w-full container">
         <h1 className="my-auto">
           <a href="/">
           <img src="/icon.svg" alt="" />
           </a>
         </h1>
-        <NavigationMenu className="my-auto">
+        <NavigationMenu className="my-auto md:flex hidden">
           <NavigationMenuList className="flex flex-row items-center gap-4 h-full">
             {navbar_list.map((item) => (
               <NavigationMenuItem key={item.href}>

@@ -29,6 +29,18 @@ export async function register(values) {
     return false;
 }
 
+export async function getUser() {
+    try {
+        const response = await getRequest("api/user/listarTodos");
+        if (response) {
+            return response[0];
+        }
+    } catch (error) {
+        console.error("Error getting user:", error);
+    }
+    return false;
+}
+
 export function logout() {
     deleteCookie("token");
 }

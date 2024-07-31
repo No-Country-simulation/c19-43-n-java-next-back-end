@@ -15,30 +15,30 @@ export default function Home() {
   return (
     <>
       <SelectCountry />
-      <section className="flex flex-row w-full h-auto my-12" id="inicio">
-        <div className="w-1/2">
+      <section className="flex flex-col-reverse md:flex-row w-full h-auto my-12" id="inicio">
+        <div className="w-full md:w-1/2">
           <LocationSelector />
         </div>
-        <div className="w-1/2 rounded-xl overflow-hidden">
+        <div className="w-full md:w-1/2 rounded-xl overflow-hidden">
           <Image
             src={HeaderImage}
             alt="background image"
-            className="w-full h-full object-center object-cover"
+            className="w-full h-64 md:h-full object-center object-cover"
           />
         </div>
       </section>
 
 
 
-      <section className="flex flex-row justify-center bg-primary my-12 p-12 w-full overflow-hidden rounded-xl" id="servicios">
-        <div className="flex flex-row items-center mx-auto">
+      <section className="flex flex-col md:flex-row justify-center bg-primary my-12 p-4 md:p-12 w-full overflow-hidden rounded-xl" id="servicios">
+        <div className="flex flex-col md:flex-row items-center mx-auto">
           <Image
               src={imgdoctor}
               alt="img doctor"
               className="object-center object-cover size-64"
           />
-          <Card className="p-0 w-3/4">
-            <CardContent className="flex flex-col gap-2 text-justify text-secondary justify-between h-full p-4">
+          <Card className="p-0 w-full md:w-3/4">
+            <CardContent className="flex flex-col gap-2 text-secondary justify-between h-full p-4">
               <CardTitle className="text-4xl">Nuestros Servicios</CardTitle>
               <ul className="flex flex-col gap-2">
                 <li className="flex">
@@ -68,14 +68,14 @@ export default function Home() {
       </section>
 
 
-      <section className="flex flex-row items-center gap-12 my-12 w-full h-auto" id="contacto">
-        <div className="rounded-xl overflow-hidden w-3/5">
+      <section className="px-4 md:p-0 flex flex-col-reverse md:flex-row items-center gap-12 my-12 w-full h-auto" id="contacto">
+        <div className="rounded-xl overflow-hidden w-full md:w-3/5">
           <GoogleMaps />
         </div>
         <div className="flex flex-col space-y-12">
           <h1 className="font-bold text-3xl">Contáctanos</h1>
-          <div className="flex flex-row space-x-4 gap-4">
-            <Card className="w-1/2 text-black text-justify h-full">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-4">
+            <Card className="w-full md:w-1/2 text-black h-full">
                 <CardContent className="p-0 h-full flex flex-col justify-between">
                   <div className="mb-4">
                     <CardTitle className="mb-2">Soporte para Miembros</CardTitle>
@@ -87,7 +87,7 @@ export default function Home() {
                   </div>
                 </CardContent>
             </Card>
-            <Card className="w-1/2 text-black text-justify">
+            <Card className="w-full md:w-1/2 text-black">
                 <CardContent className="p-0 h-full flex flex-col justify-between">
                   <div className="mb-4">
                     <CardTitle className="mb-2">Preguntas generales</CardTitle>

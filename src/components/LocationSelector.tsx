@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 import { FormCountries } from "@/types/countries";
 import { Button } from '@/components/ui/button';
+import { redirect } from 'next/navigation'
 
 import {
   Card,
@@ -47,7 +48,7 @@ export default function LocationSelector() {
     const [province, setProvince] = useState("")
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-    // do something
+        redirect(`/doctors/${country}/${province}/${values.localidad}`)
     }
 
   return (

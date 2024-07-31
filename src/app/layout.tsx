@@ -37,7 +37,7 @@ export default function RootLayout({
           fontSans.variable
         )}>
         <Navbar />  
-        <main className="flex flex-col items-center min-h-screen container">
+        <main className="flex flex-col items-center min-h-screen container md:mx-auto p-2">
           {children}
         </main> 
         <Footer />

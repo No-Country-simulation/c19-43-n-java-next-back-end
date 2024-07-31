@@ -1,24 +1,25 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 
-import { Button } from "@/components/ui/button";
-import { register } from "@/api/auth";
+import { Button } from "@/components/ui/button"
+import { register } from "@/api/auth"
 
-import form_countries from "@/data/countries.json";
-import { FormCountries } from "@/types/countries";
+import form_countries from "@/data/countries.json"
+import { FormCountries } from "@/types/countries"
 
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Input } from "@/components/ui/input"
 
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
 
+import { getUser } from '@/api/auth'
 
-const countries_data : FormCountries = form_countries;
+const countries_data : FormCountries = form_countries
 
 const formSchema = z.object({
   username: z.string().email(),
@@ -31,11 +32,11 @@ const formSchema = z.object({
   provincia: z.string().min(3),
   localidad: z.string().min(3),
   role: z.string().min(3),
-});
+})
 
 export default function Register() {
-  const [country, setCountry] = useState<string>("");
-  const [province, setProvince] = useState<string>("");
+  const [country, setCountry] = useState<string>("")
+  const [province, setProvince] = useState<string>("")
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -51,12 +52,12 @@ export default function Register() {
       localidad: "",
       role: "",
     },
-  });
+  })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const sesion = await register(values);
+    const sesion = await register(values)
     if (sesion) {
-      window.location.reload();
+      window.location.reload()
     }
   }
   return (
@@ -136,9 +137,9 @@ export default function Register() {
                   <FormControl>
                     <Select
                       onValueChange={(value) => {
-                        field.onChange(value);
-                        setCountry(value);
-                        setProvince(""); // Clear province and locality when country changes
+                        field.onChange(value)
+                        setCountry(value)
+                        setProvince("") // Clear province and locality when country changes
                       }}
                       value={field.value}
                     >
@@ -168,8 +169,8 @@ export default function Register() {
                   <FormControl>
                     <Select
                       onValueChange={(value) => {
-                        field.onChange(value);
-                        setProvince(value);
+                        field.onChange(value)
+                        setProvince(value)
                       }}
                       value={field.value}
                       disabled={!country}
@@ -266,7 +267,7 @@ export default function Register() {
             </DialogFooter>
           </form>
         </Form>
-  );
+  )
 }
 
 
