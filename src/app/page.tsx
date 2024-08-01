@@ -11,9 +11,12 @@ import GoogleMaps from "@/components/GoogleMaps";
 import SelectCountry from '@/components/SelectCountry';
 import LocationSelector from '@/components/LocationSelector'
 import { DoctorCard } from './../components/DoctorCard';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col items-center min-h-screen container md:mx-auto p-2">
+      <Navbar />  
       <SelectCountry />
       <section className="flex flex-col-reverse md:flex-row w-full h-auto my-12" id="inicio">
         <div className="w-full md:w-1/2">
@@ -102,6 +105,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+
+      <Footer />
+    </div>
   );
 }

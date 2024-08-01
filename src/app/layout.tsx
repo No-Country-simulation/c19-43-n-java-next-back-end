@@ -36,11 +36,9 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}>
-        <Navbar />  
-        <main className="flex flex-col items-center min-h-screen container md:mx-auto p-2">
+        <main>
           {children}
         </main> 
-        <Footer />
       </body>
     </html>
   );
