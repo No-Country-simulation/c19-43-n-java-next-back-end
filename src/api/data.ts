@@ -30,7 +30,12 @@ export async function reqBackend(url:string,values:any) {
  * @param id ID del usuario
  * @returns Datos del usuario con ese ID
  */
-export async function userVerPerfil(id:any) {
-  const res = reqBackend("api/user/ver",{id:id})
+export async function userVerPerfil() {
+  const res = reqBackend("api/user/ver",null)
+  return res
+}
+
+export async function userGetDoctors() {
+  const res = reqBackend("api/user/listarMedicos",null)
   return res
 }

@@ -1,16 +1,14 @@
-import Image from 'next/image'
+export const runtime = 'edge';
+import Image from 'next/image';
 
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardTitle, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 import imgdoctor from "/public/imgdoctor.png";
 import HeaderImage from "@/resources/images/doctores.png";
-import Register from "@/components/Register"
+import Register from "@/components/Register";
 import GoogleMaps from "@/components/GoogleMaps";
 import SelectCountry from '@/components/SelectCountry';
-import LocationSelector from '@/components/LocationSelector'
-import { DoctorCard } from './../components/DoctorCard';
+import LocationSelector from '@/components/LocationSelector';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 export default function Home() {

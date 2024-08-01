@@ -11,12 +11,12 @@ export async function postRequest(endpoint, values) {
           },
           body: JSON.stringify(values),
         });
-        console.log(response);
+        // console.log(response);
         if (!response.ok) {
             throw new Error("Error en la consulta");
         }
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         return data;
     } catch (error) {
         console.error(error);
@@ -34,7 +34,7 @@ export async function getRequest(endpoint) {
 }
 
 export async function getRequestVals(endpoint,values) {
-    let test = 1;
+    let test = 0;
     if(test) console.log("Datos de Consulta",`url:${api_url}${endpoint}`,JSON.stringify(values))
     try {
         const response = await fetch(`${api_url}${endpoint}`, {
@@ -42,7 +42,7 @@ export async function getRequestVals(endpoint,values) {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(values),
+            body: (values == null?null:JSON.stringify(values)),
           })
         const data = await response.json();
         return data;

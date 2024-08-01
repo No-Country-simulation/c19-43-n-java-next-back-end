@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { userVerPerfil } from "@/api/data";
 import TestButton from "@/components/user/TestButton";
 import { cookies } from "next/headers";
@@ -5,7 +6,7 @@ import { cookies } from "next/headers";
 // Perfil principal del usuario
 export default async function Page() {
   let session = cookies().getAll()
-  let udata = userVerPerfil(1)
+  let udata = userVerPerfil()
   return (
     <main className="">
       <TestButton data={udata} />      
