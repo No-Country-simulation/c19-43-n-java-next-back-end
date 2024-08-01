@@ -12,9 +12,8 @@ import { Button, Icon } from "@tremor/react";
 import Link from "next/link";
 import { sidebar_list } from "@/config/config";
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { RiAlignJustify, RiCloseLine, RiMenu3Line, RiMenuLine } from "@remixicon/react";
-import NavLogin from "@/components/landing/NavLogin";
+import { RiCloseLine, RiMenuLine } from "@remixicon/react";
+// import NavLogin from "@/components/landing/NavLogin";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -55,7 +54,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Button>
           </div>
           <div className="flex items-center pr-4">
-            <NavLogin />
+            {/* <NavLogin /> */}
           </div>
         </div>
         {/* Main Content */}
