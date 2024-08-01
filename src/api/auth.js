@@ -1,5 +1,5 @@
 import { setCookie, deleteCookie } from "@/utils/cookies"; // Asegúrate de tener una función deleteCookie en utils
-import { getRequest, postRequest } from "./request";
+import { getRequest, postRequest, getAuthRequest } from "./request";
 
 export async function login(values) {
     try {
@@ -30,12 +30,10 @@ export async function register(values) {
     return false;
 }
 
-export async function getUser() {
+export async function getUser(token) {
     try {
-        const response = await getRequest("api/user/listarTodos");
-        if (response) {
-            return response[0];
-        }
+        const response = await getAuthRequest('api/user/ver', token)
+        return response
     } catch (error) {
         console.error("Error getting user:", error);
     }

@@ -7,7 +7,7 @@ export default async function ListDoctor() {
     console.log(data)
     
     return (
-        <div>
+        <div className="">
             {data.map((doctor, index) => (
                 <DoctorCard 
                     key={index}

@@ -50,3 +50,17 @@ export async function getRequestVals(endpoint,values) {
         console.error(error);
     }
 }
+
+export async function getAuthRequest(endpoint, token) {
+    try {
+        const response = await fetch(`${api_url}${endpoint}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
