@@ -54,7 +54,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Button>
           </div>
           <div className="flex items-center pr-4">
-            <NavLogin />
+            {/* <NavLogin /> */}
           </div>
         </div>
         {/* Main Content */}
