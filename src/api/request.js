@@ -13,7 +13,7 @@ export async function postRequest(endpoint, values) {
         });
         console.log(response);
         if (!response.ok) {
-            throw new Error("Something went wrong");
+            throw new Error("Error en la consulta");
         }
         const data = await response.json();
         console.log(data);
@@ -26,6 +26,24 @@ export async function postRequest(endpoint, values) {
 export async function getRequest(endpoint) {
     try {
         const response = await fetch(`${api_url}${endpoint}`)
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getRequestVals(endpoint,values) {
+    let test = 1;
+    if(test) console.log("Datos de Consulta",`url:${api_url}${endpoint}`,JSON.stringify(values))
+    try {
+        const response = await fetch(`${api_url}${endpoint}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+          })
         const data = await response.json();
         return data;
     } catch (error) {
