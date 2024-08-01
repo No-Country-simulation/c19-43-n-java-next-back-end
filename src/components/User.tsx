@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/avatar"
 import Link from "next/link"
 
-export default function User() {
+export default function User({ user } : { user: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -34,7 +34,7 @@ export default function User() {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Mi cuenta</DropdownMenuLabel>
+        <DropdownMenuLabel>{ user }</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup className="w-full">
           <DropdownMenuItem className="w-full">

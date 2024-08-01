@@ -1,31 +1,31 @@
-"use client";
-
+'use server'
 import User from '@/components/User';
-import { useEffect, useState } from "react";
 import Login from "../Login";
 import Register from "../Register";
 
-export default function NavLogin() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+import { getUser } from '@/api/auth'
+import { cookies } from 'next/headers'
+import { UserType } from '@/types/users';
 
-  useEffect(() => {
-    if (document.cookie.includes("token")) {
-      setIsAuthenticated(true);
-    }
-  }, []);
+export default async function NavLogin() {
+  const cookieStore = cookies();
+  const token = cookieStore.get('token');
+
+  const user_data : UserType = await getUser(token?.value);
+
 
   return (
     <div className="flex flex-row gap-2 my-auto">
-      {isAuthenticated ? (
-        <>
-          <User />
-        </>
-      ) : (
-        <>
-          <Login />
-          <Register />
-        </>
-      )}
+      {!!user_data ? (
+            <>
+              <User user={user_data.nombre}/>
+            </>
+          ) : (
+            <>
+              <Login />
+              <Register />
+            </>
+          )}
     </div>
   );
 }

@@ -1,23 +1,21 @@
-"use client";
+'use server'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@radix-ui/react-navigation-menu";
 
 import { navbar_list } from "@/config/config";
 import Link from "next/link";
 import User from '@/components/User';
-import { useEffect, useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
 import Image from "next/image";
+import { getUser } from '@/api/auth'
+import { cookies } from 'next/headers'
+import { UserType } from '@/types/users';
+export default async function Navbar() {  
+  const cookieStore = cookies();
+  const token = cookieStore.get('token');
 
-export default function Navbar() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    if (document.cookie.includes("token")) {
-      setIsAuthenticated(true);
-    }
-  }, []);
+  const user_data : UserType = await getUser(token?.value);
 
   return (
     <nav className="w-full">
@@ -39,9 +37,9 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex flex-row gap-2 my-auto">
-          {isAuthenticated ? (
+          {!!user_data ? (
             <>
-              <User />
+              <User user={user_data.nombre}/>
             </>
           ) : (
             <>
