@@ -1,0 +1,21 @@
+export type UserType = {
+  id: number;
+  nombre: string;
+  apellido: string;
+  documento: number;
+  pais: string;
+  localidad: string;
+  provincia: string;
+  telefono: number;
+  username: string;
+  password: string;
+  role: 'PACIENTE' | 'MEDICO';
+  fecha_Registro: string;
+  estado: boolean;
+  peso: number;
+  altura: number;
+  genero: 'M' | 'F' | 'Otro' | null; 
+  fechaDeNacimiento: string | null; 
+  alergias: string | null;
+  contacto_emergencia: string | null;
+};

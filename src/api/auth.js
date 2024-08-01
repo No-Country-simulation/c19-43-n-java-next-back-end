@@ -32,6 +32,7 @@ export async function register(values) {
 
 export async function getUser(token) {
     try {
+        console.log(token);
         const response = await getAuthRequest('api/user/ver', token)
         return response
     } catch (error) {

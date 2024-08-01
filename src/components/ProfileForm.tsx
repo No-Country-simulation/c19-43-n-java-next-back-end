@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { register } from "@/api/auth"
@@ -17,14 +17,9 @@ import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 
-import { getUser } from '@/api/auth'
-import { getCookie } from "@/utils/cookies"
-
 const countries_data: FormCountries = form_countries
 
 const formSchema = z.object({
-  username: z.string().email(),
-  password: z.string().min(8),
   nombre: z.string().min(3),
   apellido: z.string().min(3),
   telefono: z.string().min(8),
@@ -35,12 +30,10 @@ const formSchema = z.object({
   role: z.string().min(3),
 })
 
-export default function ProfileForm({username, password, nombre, apellido, telefono, documento, pais, provincia, localidad, role} : {username: string, password: string, nombre: string, apellido: string, telefono: string, documento: string, pais: string, provincia: string, localidad: string, role: string}) {
+export default function ProfileForm({ nombre, apellido, telefono, documento, pais, provincia, localidad, role } : { nombre: string, apellido: string, telefono: string, documento: string, pais: string, provincia: string, localidad: string, role: string }) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username,
-      password,
       nombre,
       apellido,
       telefono,
@@ -51,7 +44,7 @@ export default function ProfileForm({username, password, nombre, apellido, telef
       role,
     },
   })
-  
+
   const [country, setCountry] = useState<string>(pais)
   const [province, setProvince] = useState<string>(provincia)
 
@@ -61,7 +54,7 @@ export default function ProfileForm({username, password, nombre, apellido, telef
       window.location.reload()
     }
   }
-  
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="container">
@@ -86,32 +79,6 @@ export default function ProfileForm({username, password, nombre, apellido, telef
               <FormLabel>Apellido</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Correo Electrónico</FormLabel>
-              <FormControl>
-                <Input type="email" placeholder="" {...field} />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Contraseña</FormLabel>
-              <FormControl>
-                <Input type="password" placeholder="" {...field} />
               </FormControl>
             </FormItem>
           )}
