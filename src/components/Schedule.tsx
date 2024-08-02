@@ -17,10 +17,15 @@ import { ConsultType } from '@/types/consult'
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 
-export default function Schedule({ consults }: { consults: ConsultType[] | null | undefined }) {
+interface ScheduleProps {
+  consults: ConsultType[] | null | undefined;
+  selectedConsult: ConsultType | null;
+  onSelectConsult: (consult: ConsultType | null) => void;
+}
+
+export default function Schedule({ consults, selectedConsult, onSelectConsult }: ScheduleProps) {
     const [date, setDate] = useState<Date>(new Date())
     const [filteredConsults, setFilteredConsults] = useState<ConsultType[]>([])
-    const [selectedConsult, setSelectedConsult] = useState<ConsultType | null>(null)
 
     useEffect(() => {
         if (consults && date) {
@@ -44,8 +49,8 @@ export default function Schedule({ consults }: { consults: ConsultType[] | null 
         }
     }
 
-    const handleTimeClick = (selectedConsultNow: ConsultType) => {
-        setSelectedConsult(selectedConsultNow)
+    const handleTimeClick = (consult: ConsultType) => {
+        onSelectConsult(consult)
     }
 
     return (
@@ -79,7 +84,7 @@ export default function Schedule({ consults }: { consults: ConsultType[] | null 
                         filteredConsults.map((consult) => (
                             <Fragment key={consult.id}>
                                 <Button 
-                                    className="mb-2 text-sm p-4 w-full text-left bg-gray-100 hover:bg-gray-200 rounded" 
+                                    className="mb-2 text-sm p-4 w-full text-left bg-gray-100 hover:bg-gray-200 rounded flex flex-row justify-between" 
                                     onClick={() => handleTimeClick(consult)}
                                 >
                                     <div className="font-medium text-gray-900">
@@ -97,14 +102,6 @@ export default function Schedule({ consults }: { consults: ConsultType[] | null 
                     )}
                 </div>
             </ScrollArea>
-            <div className="mt-4 p-4 bg-gray-50 border rounded">
-                <h5 className="text-sm font-medium">Selected Time</h5>
-                {selectedConsult === null ? (
-                    <p>No appointment selected</p>
-                ) : (
-                    <p>Consulta: {JSON.stringify(selectedConsult)}</p>
-                )}
-            </div>
         </div>
     )
 }

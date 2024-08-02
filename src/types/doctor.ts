@@ -13,11 +13,12 @@ export default interface Doctor {
     fecha_Registro: string;
     estado: boolean;
     genero: string | null;
-    especialidad: string;
-    n_licencia: string;
-    anios_experiencia: number;
-    num_contacto: number;
-    consultorio: string;
+    especialidad: string | null;
+    n_licencia: string | null;
+    anios_experiencia: number | null;
+    num_contacto: number | null;
+    consultorio: string | null;
     slug: string | null;
+    imagen: string | null;
   }
   

@@ -1,5 +1,5 @@
 import { setCookie, deleteCookie } from "@/utils/cookies"
-import { getRequest, postRequest, getAuthRequest } from "./request"
+import { getRequest, postRequest, getAuthRequest } from "@/api/request"
 
 export async function login(values) {
     try {
