@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import { userVerPerfil } from "@/api/data";
 import TestButton from "@/components/user/TestButton";
 import { cookies } from "next/headers";
