@@ -7,6 +7,7 @@ export async function login(values) {
         if (response) {
             setCookie("token", response.token, 7)
             setCookie("session", response, 7)
+            console.log(response)
             return true
         }
     } catch (error) {
