@@ -13,7 +13,7 @@ export default async function page() {
   return (
     <div className="">
       <h1>Listado de doctores</h1>
-      <DoctList params={{lstdocts:data}} />
+      {/* <DoctList params={{lstdocts:data}} /> */}
     </div>
   )
 }

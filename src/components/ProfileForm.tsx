@@ -57,7 +57,7 @@ export default function ProfileForm({ nombre, apellido, telefono, documento, pai
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="container">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="container flex flex-col gap-4">
         <FormField
           control={form.control}
           name="nombre"
@@ -229,7 +229,7 @@ export default function ProfileForm({ nombre, apellido, telefono, documento, pai
           )}
         />
 
-        <DialogFooter>
+        <DialogFooter className="mt-4">
           <Button type="submit">Registrarse</Button>
         </DialogFooter>
       </form>

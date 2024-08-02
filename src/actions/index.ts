@@ -1,0 +1,1 @@
+export { searchDoctorRedirect } from "./search-doctor";
