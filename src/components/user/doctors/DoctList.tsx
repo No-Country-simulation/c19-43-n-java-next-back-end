@@ -13,7 +13,9 @@ export default async function DoctList({params}:DoctListProps) {
     const {lstdocts} = params
     const data:RegDoctor[] = lstdocts
     return (
-        <div className="">
+        <div className="grid grid-cols-2 grid-flow-col gap-4">
+            {/* Formulario de Filtros */}
+            {/* Listado de Doctores en Tarjetas */}
             {data.map((doctor, index) => (
                 <DoctCard params={{doctdata:data[index]}} key={index} />
             ))}

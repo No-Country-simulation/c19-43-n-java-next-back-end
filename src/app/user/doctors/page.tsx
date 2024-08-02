@@ -9,10 +9,9 @@ import TestButton from '@/components/user/TestButton'
 export default async function page() {
   let {data} = await userGetDoctors()
   return (
-    <div className="">
+    <div className="bg-white p-4 rounded">
       <h1>Listado de doctores</h1>
       <DoctList params={{lstdocts:data}} />
-      <TestButton data={data} />
     </div>
   )
 }
