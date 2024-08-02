@@ -7,17 +7,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { getAppointments } from "@/api/appointments"
 
-export default function page() {
-  const appointments = [
-    {
-      doctor: "Dr. House",
-      date: "2022-12-12",
-      time: "09:00",
-      status: "Visited",
-      price: "$100",
-    },
-  ]
+import { getUser } from '@/api/auth'
+import { cookies } from 'next/headers';
+
+export default async function page() {
+  const cookieStore = cookies();
+  const token = cookieStore.get('token');
+
+  const appointments = await getAppointments(token)
+
   return (
     <div className="container">
     <Table>
@@ -33,7 +33,8 @@ export default function page() {
       </TableHeader>
       <TableBody>
         {
-          appointments.map((appointment) => (
+          /*
+          !!appointments && appointments.map((appointment) => (
             <TableRow key={appointment.date}>
               <TableCell>{appointment.doctor}</TableCell>
               <TableCell>{appointment.date}</TableCell>
@@ -42,6 +43,7 @@ export default function page() {
               <TableCell>{appointment.status}</TableCell>
             </TableRow>
           ))
+            */
         }
       </TableBody>
     </Table>
