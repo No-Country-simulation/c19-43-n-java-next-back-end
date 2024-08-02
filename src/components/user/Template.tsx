@@ -57,7 +57,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           </div>
         </div>
         {/* Main Content */}
-        <div className="flex flex-col h-full">
+        <div className="grow flex flex-col h-full">
           <div className="grow h-full align-top p-4">
             {children}
           </div>
