@@ -1,4 +1,7 @@
 'use server'
+
+export const runtime = 'edge'
+
 import User from '@/components/User';
 import Login from "../Login";
 import Register from "../Register";

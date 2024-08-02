@@ -1,14 +1,9 @@
-import { userVerPerfil } from "@/api/data";
-import TestButton from "@/components/user/TestButton";
-import { cookies } from "next/headers";
+import ListDoctor from '@/components/ListDoctor'
+import { CardContent, CardDescription, CardTitle } from '@/components/ui/card'
+import { Card } from '@tremor/react'
 
-// Perfil principal del usuario
-export default async function Page() {
-  let session = cookies().getAll()
-  let udata = userVerPerfil()
+export default function page() {
   return (
-    <main className="">
-      <TestButton data={udata} />      
-    </main>
+    <ListDoctor />
   )
 }
