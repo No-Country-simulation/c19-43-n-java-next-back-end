@@ -17,7 +17,7 @@ export function StarRating({params}:StarRatProps) {
     <div className="flex flex-row gap-2 items-center">
       {
         [...Array(5)].map((val, i) => (
-          <Icon icon={(i>Math.ceil(stars)?RiStarLine:((stars-Math.floor(stars))>0 && Math.ceil(stars)==i?RiStarHalfFill:RiStarFill))} />
+          <Icon icon={(i>Math.ceil(stars)?RiStarLine:((stars-Math.floor(stars))>0 && Math.ceil(stars)==i?RiStarHalfFill:RiStarFill))} key={i} />
         ))
       }
       <p>Citas Realizadas: {reviews}</p>
