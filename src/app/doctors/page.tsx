@@ -14,7 +14,6 @@ export default async function page() {
     <div className="">
       <h1>Listado de doctores</h1>
       <DoctList params={{lstdocts:data}} />
-      <TestButton data={data} />
     </div>
   )
 }

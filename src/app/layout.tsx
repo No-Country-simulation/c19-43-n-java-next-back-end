@@ -34,11 +34,11 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}>
-        <Navbar />
         <main>
+          {/* <Navbar /> */}
           {children}
+          {/* <Footer /> */}
         </main> 
-        <Footer />
       </body>
     </html>
   );
