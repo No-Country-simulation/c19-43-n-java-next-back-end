@@ -1,19 +1,20 @@
-export const runtime = 'edge'
+'use client'
+// export const runtime = 'edge'
 
 import { userGetDoctors } from '@/api/data'
-import { RegDoctor } from '@/api/dtypes'
-import ListDoctor from '@/components/ListDoctor'
+import LocationSelector from '@/components/LocationSelector'
 import DoctList from '@/components/user/doctors/DoctList'
-import TestButton from '@/components/user/TestButton'
+import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
-export default async function page() {
-  
-  let {data} = await userGetDoctors()
-
+export default function Page() {
+  const searchParams = useSearchParams()
+  // console.log("user/doctors/page srcparams:",searchParams);
   return (
-    <div className="">
+    <div className="bg-white p-4 rounded">
       <h1>Listado de doctores</h1>
-      {/* <DoctList params={{lstdocts:data}} /> */}
+      <LocationSelector />
+      <DoctList params={{srcpars:searchParams}} />
     </div>
   )
 }
