@@ -5,13 +5,11 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import { RegDoctor } from "@/api/dtypes";
 import { StarRating } from "./StarRating";
-import { Button, Icon } from "@tremor/react";
+import { Button } from "@tremor/react";
 import Link from "next/link";
-import { RiCheckFill } from "@remixicon/react";
 
 interface DoctProps{
   params:{
@@ -19,7 +17,7 @@ interface DoctProps{
   }
 }
 
-export function DoctCard({params}:DoctProps) {
+export function DoctCard({params}:DoctProps) {  
   let { doctdata } = params //Extraer doct de los parámetros
   let { nombre, apellido,especialidad,localidad,pais,id } = doctdata
   return (

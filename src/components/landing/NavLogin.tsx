@@ -1,4 +1,4 @@
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 import User from '@/components/User';
 import Login from "../Login";
@@ -9,7 +9,7 @@ import { cookies } from 'next/headers'
 import { UserType } from '@/types/users';
 import { useEffect, useState } from 'react';
 
-export default async function NavLogin() {
+export default function NavLogin() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
