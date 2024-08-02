@@ -22,9 +22,9 @@ const navbar_list = [
 ];
 
 const sidebar_list = [
-  {title:'Buscar Doctor',href:'user/doctors',icon:ricon.RiSearchLine, subs:[],},
-  {title:'Mis consultas',href:'user/consultas',icon:ricon.RiCalendar2Line, subs:[],},
-  {title:'Historia Médica',href:'user/historia',icon:ricon.RiClipboardLine, subs:[],},
+  {title:'Buscar Doctor',href:'/user/doctors',icon:ricon.RiSearchLine, subs:[],},
+  {title:'Mis consultas',href:'/user/appointments',icon:ricon.RiCalendar2Line, subs:[],},
+  {title:'Perfil',href:'/user/profile',icon:ricon.RiClipboardLine, subs:[],},
 ];
 
 export { navbar_list, sidebar_list };
