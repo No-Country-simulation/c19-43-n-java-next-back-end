@@ -19,6 +19,6 @@ export default interface Doctor {
     num_contacto: number | null;
     consultorio: string | null;
     slug: string | null;
-    image: string | null;
+    imagen: string | null;
   }
   

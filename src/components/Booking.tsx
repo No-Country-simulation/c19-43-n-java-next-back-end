@@ -37,7 +37,7 @@ export default function Booking({ doctor, consults, user, token }: BookingProps)
                 <CardDescription className="text-lg text-gray-600">{doctor.especialidad}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-                <Schedule consults={consults} selectedConsult={selectedConsult}  onSelectConsult={handleSelectConsult} />
+              <Schedule consults={consults} selectedConsult={selectedConsult}  onSelectConsult={handleSelectConsult} />
             </CardContent>
             <CardFooter>
                 <ConfirmConsult doctor={doctor} consult={selectedConsult} user={user} token={token}/>

@@ -16,6 +16,7 @@ export async function getDoctor(value) {
     try {
         const response = await getRequest(`api/user/medico/${value}`)
         if (response) {
+            console.log(response)
             return response;
         }
     } catch (error) {
