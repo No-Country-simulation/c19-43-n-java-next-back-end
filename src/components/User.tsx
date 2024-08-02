@@ -38,10 +38,10 @@ export default function User() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup className="w-full">
           <DropdownMenuItem className="w-full">
-            <Link href="/profile" className="w-full">Perfil</Link>
+            <Link href="/user/profile" className="w-full">Perfil</Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="w-full">
-            <Link href="/appointments" className="w-full">Citas</Link>
+            <Link href="/user/appointments" className="w-full">Citas</Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuItem>
