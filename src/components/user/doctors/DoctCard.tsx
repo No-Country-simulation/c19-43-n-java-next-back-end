@@ -23,7 +23,7 @@ export function DoctCard({params}:DoctProps) {
   return (
     <Card className="max-w-md md:max-w-2xl px-2 shadow-md p-4 bg-secondary">
       <CardContent className="flex flex-row gap-4">
-        <div className="bg-cover bg-bottom h-56 md:h-auto md:w-56">
+        <div className="bg-cover bg-bottom h-40 md:h-auto md:w-56">
           {/* Imagen referencial */}
           <Image src={"/img/imgdr.jpeg"} alt="dr" className="size-60 rounded-full" width={400} height={400} />
         </div>

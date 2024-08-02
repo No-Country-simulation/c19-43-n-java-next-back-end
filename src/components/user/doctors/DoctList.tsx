@@ -13,7 +13,7 @@ export default async function DoctList({params}:DoctListProps) {
     const {srcpars} = params
     let {data} = await userGetDoctors()
     return (
-        <div className="grid grid-cols-2 grid-flow-col gap-4">
+        <div className="grid grid-cols-2 gap-4">
             {/* Listado de Doctores en Tarjetas */}
             {data.map((doctor:RegDoctor, index:number) => (
                 <DoctCard params={{doctdata:doctor}} key={index} />
