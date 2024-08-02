@@ -1,3 +1,5 @@
+'use server'
+
 export const runtime = 'edge'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@radix-ui/react-navigation-menu";
