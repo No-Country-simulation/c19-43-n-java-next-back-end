@@ -20,6 +20,7 @@ import { Separator } from "@/components/ui/separator"
 export default function Schedule({ consults }: { consults: ConsultType[] | null | undefined }) {
     const [date, setDate] = useState<Date>(new Date())
     const [filteredConsults, setFilteredConsults] = useState<ConsultType[]>([])
+    const [selectedConsult, setSelectedConsult] = useState<ConsultType | null>(null)
 
     useEffect(() => {
         if (consults && date) {
@@ -39,9 +40,12 @@ export default function Schedule({ consults }: { consults: ConsultType[] | null 
         if (newDate && startOfDay(newDate) >= startOfDay(new Date())) {
             setDate(newDate)
         } else {
-            // Optionally, you could set date to null or show an error
             console.log("Selected date is in the past")
         }
+    }
+
+    const handleTimeClick = (selectedConsultNow: ConsultType) => {
+        setSelectedConsult(selectedConsultNow)
     }
 
     return (
@@ -51,7 +55,7 @@ export default function Schedule({ consults }: { consults: ConsultType[] | null 
                     <Button
                         variant={"outline"}
                         className={cn(
-                            "w-[280px] justify-start text-left font-normal",
+                            "w-full justify-start text-left font-normal",
                             !date && "text-muted-foreground"
                         )}
                     >
@@ -68,17 +72,23 @@ export default function Schedule({ consults }: { consults: ConsultType[] | null 
                     />
                 </PopoverContent>
             </Popover>
-            <ScrollArea className="h-72 w-full rounded-md border">
+            <ScrollArea className="h-72 w-full rounded-md border mt-4">
                 <div className="p-4">
                     <h4 className="mb-4 text-sm font-medium leading-none">Consultas</h4>
                     {filteredConsults.length > 0 ? (
                         filteredConsults.map((consult) => (
                             <Fragment key={consult.id}>
-                                <div className="text-sm mb-2">
-                                    <p>Inicio: {format(new Date(consult.inicio), "PPPpp")}</p>
-                                    <p>Fin: {format(new Date(consult.fin), "PPPpp")}</p>
-                                    <p>Disponible: {consult.disponible ? "Sí" : "No"}</p>
-                                </div>
+                                <Button 
+                                    className="mb-2 text-sm p-4 w-full text-left bg-gray-100 hover:bg-gray-200 rounded" 
+                                    onClick={() => handleTimeClick(consult)}
+                                >
+                                    <div className="font-medium text-gray-900">
+                                        {format(new Date(consult.inicio), "HH:mm")} - {format(new Date(consult.fin), "HH:mm")}
+                                    </div>
+                                    <div className="text-gray-600 text-xs">
+                                        {format(new Date(consult.inicio), "PPP")}
+                                    </div>
+                                </Button>
                                 <Separator className="my-2" />
                             </Fragment>
                         ))
@@ -87,6 +97,14 @@ export default function Schedule({ consults }: { consults: ConsultType[] | null 
                     )}
                 </div>
             </ScrollArea>
+            <div className="mt-4 p-4 bg-gray-50 border rounded">
+                <h5 className="text-sm font-medium">Selected Time</h5>
+                {selectedConsult === null ? (
+                    <p>No appointment selected</p>
+                ) : (
+                    <p>Consulta: {JSON.stringify(selectedConsult)}</p>
+                )}
+            </div>
         </div>
     )
 }
