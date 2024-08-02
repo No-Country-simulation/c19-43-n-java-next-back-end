@@ -1,23 +1,22 @@
-"use client";
+"use client"
 
-import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@radix-ui/react-navigation-menu";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@radix-ui/react-navigation-menu"
 
-import { navbar_list } from "@/config/config";
-import Link from "next/link";
-import User from '@/components/User';
-import { useEffect, useState } from "react";
-import Login from "./Login";
-import Register from "./Register";
-import Image from "next/image";
+import { navbar_list } from "@/config/config"
+import Link from "next/link"
+import User from '@/components/User'
+import { useEffect, useState } from "react"
+import Login from "./Login"
+import Register from "./Register"
 
 export default function Navbar() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
     if (document.cookie.includes("token")) {
-      setIsAuthenticated(true);
+      setIsAuthenticated(true)
     }
-  }, []);
+  }, [])
 
   return (
     <nav className="w-full">
@@ -52,5 +51,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
