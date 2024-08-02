@@ -1,5 +1,4 @@
 'use server'
-export const runtime = 'edge';
 import ProfileForm from '@/components/ProfileForm'
 import { getUser } from '@/api/auth'
 import { cookies } from 'next/headers';

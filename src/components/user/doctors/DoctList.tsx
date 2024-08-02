@@ -15,7 +15,7 @@ export default async function DoctList({params}:DoctListProps) {
     return (
         <div className="">
             {data.map((doctor, index) => (
-                <DoctCard params={{doctdata:data[index]}} />
+                <DoctCard params={{doctdata:data[index]}} key={index} />
             ))}
         </div>
     )
