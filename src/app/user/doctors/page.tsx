@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { userGetDoctors } from '@/api/data'
 import { RegDoctor } from '@/api/dtypes'
 import ListDoctor from '@/components/ListDoctor'
