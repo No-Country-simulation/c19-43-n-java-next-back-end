@@ -1,17 +1,18 @@
+'use server'
+
 export const runtime = 'edge'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@radix-ui/react-navigation-menu";
 
-import { navbar_list } from "@/config/config"
-import Link from "next/link"
-import User from '@/components/User'
-import Login from "./Login"
-import Register from "./Register"
-import Image from "next/image"
+import { navbar_list } from "@/config/config";
+import Link from "next/link";
+import User from '@/components/User';
+import Login from "./Login";
+import Register from "./Register";
+import Image from "next/image";
 import { getUser } from '@/api/auth'
 import { cookies } from 'next/headers'
-import { UserType } from '@/types/users'
-
+import { UserType } from '@/types/users';
 export default async function Navbar() {  
   const cookieStore = cookies();
   const token = cookieStore.get('token');
