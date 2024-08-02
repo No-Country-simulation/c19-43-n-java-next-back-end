@@ -1,11 +1,11 @@
-import { userGetDoctors } from '@/api/data';
+export const runtime = 'edge'
+
 import { getAllDoctors } from '@/api/doctors'
 import { DoctorCard } from '@/components/DoctorCard'
 
 export default async function ListDoctor() {
-    // Asegúrate de definir el tipo correcto para data
     const data: { nombre: string; apellido: string }[] = await getAllDoctors()
-    // console.log("Data Obtained",dtdocs)
+
     
     return (
         <div className="">
