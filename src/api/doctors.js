@@ -14,7 +14,7 @@ export async function getAllDoctors() {
 
 export async function getDoctor(value) {
     try {
-        const response = await getRequest(`api/medico/${value}`)
+        const response = await getRequest(`api/user/medico/${value}`)
         if (response) {
             return response;
         }
@@ -35,4 +35,5 @@ export async function getSchedule(value) {
     }
     return false;
 }
+
 

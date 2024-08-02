@@ -64,3 +64,20 @@ export async function getAuthRequest(endpoint, token) {
         console.error(error);
     }
 }
+
+export async function postAuthRequest(endpoint, data, token) {
+    const response = await fetch(`${api_url}${endpoint}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+
+    return response.json();
+}
