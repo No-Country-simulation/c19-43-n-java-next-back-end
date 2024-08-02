@@ -1,5 +1,3 @@
-'use server'
-
 export const runtime = 'edge'
 
 import User from '@/components/User';
