@@ -7,19 +7,23 @@ import Register from "../Register";
 import { getUser } from '@/api/auth'
 import { cookies } from 'next/headers'
 import { UserType } from '@/types/users';
+import { useEffect, useState } from 'react';
 
 export default async function NavLogin() {
-  const cookieStore = cookies();
-  const token = cookieStore.get('token');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const user_data : UserType = await getUser(token?.value);
+  useEffect(() => {
+    if (document.cookie.includes("token")) {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
 
   return (
     <div className="flex flex-row gap-2 my-auto">
-      {!!user_data ? (
+      {isAuthenticated ? (
             <>
-              <User user={user_data.nombre}/>
+              <User />
             </>
           ) : (
             <>
